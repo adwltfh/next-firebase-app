@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import { useRouter } from "next/navigation";
@@ -12,3 +13,5 @@ const Page = () => {
 
   return <h1>Only logged in user can view this page</h1>;
 };
+
+export default Page;
