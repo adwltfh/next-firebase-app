@@ -14,6 +14,7 @@ const Page = () => {
     const { result, error } = await signUp(email, password);
 
     if (error) {
+      console.log("user is not signed in");
       return console.log(error);
     }
 
