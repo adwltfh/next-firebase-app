@@ -1,5 +1,5 @@
 import firebase_app from "../config";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const db = getFirestore(firebase_app);
 const getDocument = async (collection, id, data) => {
@@ -7,7 +7,7 @@ const getDocument = async (collection, id, data) => {
     let result = null, error = null;
 
     try {
-        result = await getDox(docRef);
+        result = await getDoc(docRef);
     } catch (error) {
         error = e;
     }

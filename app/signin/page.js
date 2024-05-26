@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useState } from "react";
 import signIn from "../../firebase/auth/signin";
 import { useRouter } from "next/navigation";
@@ -16,8 +16,8 @@ const Page = () => {
     if (error) {
       return console.log(error);
     }
-    console.log(result);
 
+    console.log(result);
     return router.push("/admin");
   };
 
@@ -37,7 +37,7 @@ const Page = () => {
                   name="email"
                   id="email"
                   placeholder="example@mail.com"
-                  className="p-2 mt-2 rounded-md w-full"
+                  className="p-2 mt-2 rounded-md w-full text-black"
                 />
               </label>
             </div>
@@ -51,7 +51,7 @@ const Page = () => {
                   name="password"
                   id="password"
                   placeholder="password"
-                  className="p-2 mt-2 rounded-md w-full"
+                  className="p-2 mt-2 rounded-md w-full text-black"
                 />
               </label>
             </div>

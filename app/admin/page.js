@@ -9,9 +9,9 @@ const Page = () => {
 
   useEffect(() => {
     if (user == null) router.push("/");
-  }, [user]);
+  }, [router, user])
 
-  return <h1>Only logged in user can view this page</h1>;
+return (<h1>Only logged in users can view this page</h1>);
 };
 
 export default Page;
