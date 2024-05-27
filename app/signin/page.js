@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import signIn from "../../firebase/auth/signin";
 import { useRouter } from "next/navigation";
@@ -6,18 +6,21 @@ import { useRouter } from "next/navigation";
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
   const router = useRouter();
 
   const handleForm = async (event) => {
     event.preventDefault();
 
-    const { result, error } = await signIn(email, password);
+    const { result, error } = await signIn(email, password, remember);
 
     if (error) {
+      console.log("user is not signed in");
       return console.log(error);
     }
 
     console.log(result);
+    console.log("user is signed in");
     return router.push("/admin");
   };
 
@@ -55,9 +58,23 @@ const Page = () => {
                 />
               </label>
             </div>
-            <button type="submit" className="flex mt-3 bg-gray-500 p-2 rounded-lg ring-2 ring-gray-950">
-              Sign In
-            </button>
+            <div className="flex mt-3 items-center justify-between">
+              <div className="space-x-2">
+                <input
+                  type="checkbox"
+                  name="rememberMe"
+                  checked={remember}
+                  onChange={() => setRemember(!remember)}
+                />
+                <label>Remember me</label>
+              </div>
+              <button
+                type="submit"
+                className=" bg-blue-500 py-1 px-3 rounded-lg ring-2 ring-gray-950"
+              >
+                Sign In
+              </button>
+            </div>
           </form>
         </div>
       </div>
