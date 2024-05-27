@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import signIn from "../../firebase/auth/signin";
 import { useRouter } from "next/navigation";
@@ -60,10 +60,18 @@ const Page = () => {
             </div>
             <div className="flex mt-3 items-center justify-between">
               <div className="space-x-2">
-                <input type="checkbox" name="rememberMe" checked={remember} onChange={() => setRemember(!remember)}/>
+                <input
+                  type="checkbox"
+                  name="rememberMe"
+                  checked={remember}
+                  onChange={() => setRemember(!remember)}
+                />
                 <label>Remember me</label>
               </div>
-              <button type="submit" className=" bg-blue-500 py-1 px-3 rounded-lg ring-2 ring-gray-950">
+              <button
+                type="submit"
+                className=" bg-blue-500 py-1 px-3 rounded-lg ring-2 ring-gray-950"
+              >
                 Sign In
               </button>
             </div>
